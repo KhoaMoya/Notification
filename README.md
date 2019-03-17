@@ -464,7 +464,7 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 - Bắt đầu từ Android 8.0 , tất cả các noti đều phải được đăng kí vào channel.Với mỗi channel , bạn có thể thực hiện các cài đặt áp dụng cho tất cả các noti thuộc channel đó. Sau đó, người dùng có thể thay đổi những cài đặt này cũng như quyết định xem channel nào của app bạn sẽ được hiển thị.
 - Người dùng có thể thực hiện cài đặt cho tất cả các channel noti có sẵn trong mỗi app trong cài đặt hệ thống như hình sau : 
 
-<img src="img/image033.png" height="300"/>   
+<img src="img/image045.png" height="300"/>   
 - Sau khi tạo ra một noti channel bạn sẽ không thay đổi được hành vi của nó nữa.Nguời dùng sẽ hoàn toàn kiểm soát và bạn chỉ có thể thay đổi tên cũng như mô tả của channel thôi
 	
 - Bạn nên tạo các channel cho mỗi loại noti riêng biêt mà bạn muốn gửi.Bạn cũng nên tạo các channel riêng ứng với các lựa chọn của người dùng app.Giả sử với app chat.Khi người dùng tạo nhóm chat chúng ta sẽ tạo riêng channel cho nhóm này. Khi user out nhóm và không muốn nhận tin nhắn tự nhóm thì chỉ cần tắt channel.
