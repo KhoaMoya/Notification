@@ -33,7 +33,7 @@ Notification Drawer, nơi mà bạn có thể vuốt xuống và tương tác v�
 
 - Người dùng có thể "long click" vào app icon để xem các noti đó.Sau đó họ có thể hủy hoặc tương tác với các noti đó tương tự như trong Noti Drawer.
 
-<img src="img/image024.png" height="300"/>
+<img src="img/image025.png" height="300"/>
 
 - Sự tương thích của Noti qua các phiên bản 
 
@@ -66,6 +66,8 @@ Notification Drawer, nơi mà bạn có thể vuốt xuống và tương tác v�
 ## Tạo Notification
 - Những cách làm sau đây sẽ sử dụng API thuộc NotificationCompat từ Android support lib.Các Api này cho phép bạn thêm các tính năng mới mà chỉ có sẵn trên các phiên bản mới lên các thiết bị cũ mà vẫn tương thích với nhau. Tất nhiên vẫn có các tính năng sẽ không được hỗ trợ, ví dụ reply trên noti từ Android 7 sẽ không được dung với Android 4.
 ### Tạo Notification cơ bản
+
+<img src="img/image027.png" height="300"/>
 - Sử dụng đối tượng NotificationCompat.Builder 
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -140,8 +142,8 @@ Notification Drawer, nơi mà bạn có thể vuốt xuống và tương tác v�
                 
   ### Thêm action directly reply
 -  Action này có từ Android 7.0 , cho phép người dùng có thể trực tiếp nhâp vào text từ notification
-<img src="img/image019.png" height="100"/>
-<img src="img/image019.png" height="300"/>
+
+<img src="img/image029.png" height="300"/>
 - Nội dung mà bạn nhập vào sẽ được thêm vào intent mà bạn gán cho action của notification và gửi intent đến app của chúng ta.
 #### Thêm reply button 
 - Tạo một thể hiện của RemoteInput.Builder để thêm vào action của Noti. Contructor của class này nhận vào 1 string .String này sẽ được hệ thống dùng như là key cho đoạn text bạn nhập vào. Sau đó , khi app nhận intent, bạn có thể lấy ra text nhập vào bằng string này.
@@ -208,7 +210,7 @@ Notification Drawer, nơi mà bạn có thể vuốt xuống và tương tác v�
 - Lưu ý context dùng cho noti mới này ta lấy từ method onReceiver của BroadcastREceiver
 
 ### Thêm ProgressBar 
-<img src="img/image022.png" height="300"/>
+<img src="img/image031.png" height="300"/>
 - Nếu bạn có thể tước tính được khối lượng công việc hoàn thành tại bất kì thời điểm nào thì có thể dùng progressBar.
 - Dùng method : setProgress( max , progress, false ) : 
 
@@ -285,7 +287,7 @@ False
                           .bigPicture(myBitmap)
                           .bigLargeIcon(null))
 
-<img src="img/image022.png" height="300"/>
+<img src="img/image033.png" height="500"/>
 
 ### Thêm 1 block cho text
 - Thêm Style NotificationCompat.BigTextStyle 
@@ -323,7 +325,7 @@ False
                 .addMessage(message2))
         .build();
                     
-<img src="img/image022.png" height="300"/>
+<img src="img/image035.png" height="500"/>
                                                               
 ### Tạo notification với media controls 
  - Sử dụng NotificationCompat.MediaStyle 
@@ -349,7 +351,7 @@ False
         .setLargeIcon(albumArtBitmap)
         .build();
                                                    
-  <img src="img/image022.png" height="300"/>                                                            
+  <img src="img/image039.png" height="300"/>                                                            
 - Khi một noti được tạo với style này nó sẽ được mặc định là CATEGORY_TRANSPOT trừ khi bạn setCategory() lại cho nó.
 https://developer.android.com/guide/topics/media-apps/audio-app/building-a-mediabrowserservice#mediastyle-notifications
 
@@ -445,7 +447,7 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 
 ## Tạo notification group
 - Được xuất hiện từ Android 7.0 ( Api 24 ) , bạn có thể hiển thị các noti có liên quan tới nhau trong một nhóm.Ví dụ app của bạn hiển thị thông báo về mail đã nhận , bạn nên để tất cả những thông báo đó trong cùng 1 nhóm để nguwoif dùng có thể thu gọn chúng lại cùng nhau
-<img src="img/image033.png" height="300"/>     
+<img src="img/image041.png" height="500"/>     
 - Để tạo một group , cần định nghĩa các string không trùng lặp cho group đó.Sau đó với mỗi notification bạn muốn nó ở trong group , chỉ cần gọi method setGroup() và truyền vào tên group 
 
           String GROUP_KEY_WORK_EMAIL = "com.android.example.WORK_EMAIL";
@@ -462,7 +464,7 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 - Bắt đầu từ Android 8.0 , tất cả các noti đều phải được đăng kí vào channel.Với mỗi channel , bạn có thể thực hiện các cài đặt áp dụng cho tất cả các noti thuộc channel đó. Sau đó, người dùng có thể thay đổi những cài đặt này cũng như quyết định xem channel nào của app bạn sẽ được hiển thị.
 - Người dùng có thể thực hiện cài đặt cho tất cả các channel noti có sẵn trong mỗi app trong cài đặt hệ thống như hình sau : 
 
-<img src="img/image033.png" height="300"/>   
+<img src="img/image045.png" height="300"/>   
 - Sau khi tạo ra một noti channel bạn sẽ không thay đổi được hành vi của nó nữa.Nguời dùng sẽ hoàn toàn kiểm soát và bạn chỉ có thể thay đổi tên cũng như mô tả của channel thôi
 	
 - Bạn nên tạo các channel cho mỗi loại noti riêng biêt mà bạn muốn gửi.Bạn cũng nên tạo các channel riêng ứng với các lựa chọn của người dùng app.Giả sử với app chat.Khi người dùng tạo nhóm chat chúng ta sẽ tạo riêng channel cho nhóm này. Khi user out nhóm và không muốn nhận tin nhắn tự nhóm thì chỉ cần tắt channel.
