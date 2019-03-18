@@ -544,12 +544,22 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 - Sau khi tạo ra group mới thì có thể gọi setGroup() để liên kết NotificationChannel với group đó.
 - Khi bạn đã submit channel cho notification mannager, bạn sẽ không thể thay đổi sự liên kết giữa các channel và group.
 
-
-
-  
-
-
-
+# Ưu nhược điểm của push notification
+## Ưu điểm
+### Kích thích sự tham gia của ng dùng
+- Notification giúp ta thu hút nhiều ng dùng, nó giúp ta gửi các cập nhật hay redmine để ng dùng thường xuyên sử dụng app hơn
+### Giữ chân ng dùng
+- Push notification cho phép ta giữ liên lạc với ng dùng theo cách ko xâm phạm bằng cách cung cấp tin nhắn kịp thời và thông tin hữu ích cho họ. Nhiều ứng dụng di động có nhiều ng dùng đã tải xuống nhưng ko sử dụng nó. Push noti là cách tốt nhất để những ng ko dùng -> ng dùng. Theo 1 nghiên cứu của Urban, việc gửi noti có thể tăng tỉ lệ duy trì ứng dụng tưf 3 -> 10 lần. Trên thực tế, tỷ lệ duy trì ng dùng mở notification của ứng dụng cao hơn nhiều so với vào trực tiếp ứng dụng. Nó như là những lời nhắc nhở thông báo trực tiếp cho họ, vì vậy nó có thể giữ chân ng dùng trong thời gian dài
+### Tăng cường việc trao đổi thông tin
+- Các thông báo về marketing là cách tốt nhất để tăng tỉ lê trao đổi thông tin, với push noti có thể giúp ng dùng biết về thông tin giảm giá đặc biệt, hay mua hàng bằng 1 cú chạm
+### Nhắm đến đúng ng dùng
+- App có thể yêu cầu sự cho phép ng dùng để truy cập vị trí, nếu họ cấp, đây là cơ hội tuyệt vời để cá nhân hóa trải nghiệm của ng dùng bằng noti theo vị trí. App có thể gửi các ưu đãi theo từng khu vujxujwjc, múi giờ ,... . Hay ta cũng có thể push noti theo sở thích ng dùng, ví dụ như Netflix push noti cho ng dùng có thể quan tâm đến 1 chương trình,...
+### Theo dõi thống kê
+- Một lợi ích đáng kể khác của push noti là chúng giúp theo dõi hành vi của người dùng. Push noti cung cấp các phân tích phức tạp với dữ liệu về biên lai giao hàng, tỷ lệ mở, thời gian mở và mức độ tương tác. Với thông báo đẩy, bạn có thể nhận được thông tin chi tiết có giá trị về hành vi của người dùng bao gồm thời gian tương tác và tỷ lệ nhấp để xem tin nhắn nào có nhiều khả năng được mở. Dựa trên dữ liệu hành vi người dùng, bạn có thể khởi chạy các chiến dịch kết nối tốt hơn với user
+### Nâng cao tính nhất quán của thương hiệu
+- Noti cho khác hàng về các phiên giao dịch, phiếu giảm giá và ưu đãi đặc biệt vào phút cuối là 1 cách mạnh mẽ để có thêm 1 kênh marketing. Push noti như 1 kênh marketing , nơi mà ta có thể cung cấp thêm thông tin về thương hiệu của mình,...
+### Tiết kiệm bước
+- Sử dụng deeplink -> direct trực tiếp đến màn hình cần thiết, ko cần qua nhiều màn hình trung gian 
 
 
 
