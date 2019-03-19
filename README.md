@@ -270,9 +270,13 @@ False
 ### Xóa notification
 - Một notification sẽ tồn tại cho đến khi :
 1. Người dùng vuốt hủy nó
+
 2. Người dùng click vào nó trong khi bạn đã setAutoCancel() khi tạo noti
+
 3. Bạn gọi cancel() với một noti id cụ thể
+
 4. Bạn gọi cancelAll() sẽ hủy toàn bộ các noti trước đó
+
 5. Nếu setTimeoutAfter() khi tạo noti, hệ thống sẽ tự hủy nó sau time nhất định
 
 ### Tạo Expandable Notification
@@ -359,8 +363,10 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 - Khi bạn mở một activity từ notification thì phải giữ được trải nghiệm điều hướng của người dùng.
 	
 - Tùy thuộc vào 2 loại activity sau khi bạn muốn mở, chúng ta sẽ build PendingIntent phù hợp cho chúng :
+
 - Activity bình thường :  Đây là act tồn tại như là một phần luồng giao diện của app bạn.Vậy khia người dùng chuyển đến act này từ notification, task mới nên chứa tất cả các activity cũ trong back stack mà nguwoif dùng đã sử dụng. Bây giờ thì sẽ cho phép ấn back để quay lại các act trước đó.
-	- Activity đặc biệt : Activity này không xuất hiện 1 cách bình thường trong app của bạn. Tức là bạn chỉ có thể mở nó từ notification 
+
+- Activity đặc biệt : Activity này không xuất hiện 1 cách bình thường trong app của bạn. Tức là bạn chỉ có thể mở nó từ notification 
 
 ### Cài đặt PendingIntent mở Activity thông thường
 - Để mở một activity thông thường từ notification , thiết lập PendingIntent với TaskStackBuilder để tạo một backstack mới.
@@ -475,7 +481,9 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 ###  Tạo channel
 - Các bước :
 1.Khởi tạo NotificationChanel với ID riêng biệt k trùng nhau , tên người dùng , và mức đọ quan trọng của channel
-2.TÙy chọn thêm, chỉ định mô tả mà người dùng cos thể nhìn thấy trong cài đặt hệ thống với setDescription()
+
+2.TÙy chọn thêm, chỉ định mô tả mà người dùng cos thể nhìn thấy trong cài đặt hệ thống với setDescription(
+
 3.Đăng kí channel bằng cách truyền nó vào method createNotificationChannel().
 
 - Bạn nên thực hiên các bước code trên trong một điều kiện của SDK ver để chắc chắn rằn bạn sẽ chạy nó chỉ với Android 8.0 trở nên.Các phiên bản thấp hơn sẽ không được hỗ trợ channel.
@@ -561,6 +569,12 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 ### Tiết kiệm bước
 - Sử dụng deeplink -> direct trực tiếp đến màn hình cần thiết, ko cần qua nhiều màn hình trung gian 
 
+## Lưu ý 
+- Notification là dịch vụ của nhà cung cấp hệ điều hành như Apple ( iOS ), Google (Android ), Blackberry, Microsoft ( Windows Phone )
+- Việc gửi và nhận phải thông qua server của các nhà cung cấp hệ điều hành trên vì vậy bắt buộc phải nó internet.
+Notification đến nhanh hay chậm phụ thuộc vào nhiều yếu tố như đường truyền internet, smartphone, server của nhà cung cấp hệ điều hành...
+- Hiện nay ngoài ưng dụng trên di động sử dụng notification thì nhiều trình duyệt web và hệ điều hành trên may tính cũng đã ứng dụng dịch vụ này vào. Ví dụ như trình duyệt Chrome, hệ điều hành Mac, Windows 10... Một số dịch vụ cung cấp việc push notification miễn phí đối với người dùng trong đó có GCM (Google Cloud Message),...
+## Cơ chế push notification
 
 
 
