@@ -575,6 +575,12 @@ https://developer.android.com/guide/topics/media-apps/audio-app/building-a-media
 Notification đến nhanh hay chậm phụ thuộc vào nhiều yếu tố như đường truyền internet, smartphone, server của nhà cung cấp hệ điều hành...
 - Hiện nay ngoài ưng dụng trên di động sử dụng notification thì nhiều trình duyệt web và hệ điều hành trên may tính cũng đã ứng dụng dịch vụ này vào. Ví dụ như trình duyệt Chrome, hệ điều hành Mac, Windows 10... Một số dịch vụ cung cấp việc push notification miễn phí đối với người dùng trong đó có GCM (Google Cloud Message),...
 ## Cơ chế push notification
+- 3 phần
+- Server cung cấp dịch vụ push notification (FCM, JPush,..)
+- Application Server
+- Device
+- Push notification định danh từng thiết bị qua device token. Device token ko phaỉ là mã IMEI mà là id để xác định 1 app nhất định trên 1 device. Nó đc lấy bằng 1 method với thư viện trong FCM hay JPush
+- Khi push noti đc sent, application server sẽ gọi Noti Server để gửi noti về device . Sau đó Noti Service sẽ gửi noti đến đúng thiết bị chứa device token đó.
 
 
 
